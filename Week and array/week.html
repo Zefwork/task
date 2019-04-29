@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Days in week</title>
+</head>
+<style>
+  .class{font-style:italic;}
+</style>
+<body>
+  <div id="div1"></div>
+  <div id="div2" style="font-weight:bold;"></div>
+  <script>
+    let week = [];
+    week.push("Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday");
+
+    let today = new Date();
+    let day = today.getDay() - 1;
+
+    console.log("Today is - " + week[day] + ".");
+
+    for (var i = 0; i < 5; i++) {
+      var para = document.createElement("p");
+      var node = document.createTextNode(week[i]);
+      para.appendChild(node);
+
+      var element = document.getElementById("div1");
+      element.appendChild(para);
+      
+      if (day == i) {
+        document.getElementsByTagName("P")[i].classList.add('class');
+      }
+    };
+
+    for (var i = 5; i < 7; i++) {
+      var para = document.createElement("p");
+      var node = document.createTextNode(week[i]);
+      para.appendChild(node);
+
+      var element = document.getElementById("div2");
+      element.appendChild(para);
+      if (day == i) {
+        document.getElementsByTagName("P")[i].classList.add('class');
+      }
+    };
+
+    let arr = [];
+    arr.push('45673876', '36728373', '73466373', '1378376489', '232340098', '456363282', '347228484');
+    arr.forEach(item => {
+      if (item.startsWith(3) || item.startsWith(7)){
+        console.log(item);
+      }
+    });
+
+    let arrr = [32, 27, 755, 104, 47, 78, 377];
+
+    arrr.forEach(item => {
+      if (String(item).search(/^3|7/) === 0) console.log(item);
+    });
+  </script>
+</body>
+</html>
