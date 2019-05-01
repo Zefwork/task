@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>String to uc</title>
+</head>
+<body>
+  <script>
+    let str = 'урок-3-был слишком легкоо';
+    function ucFirst(str) {
+      if (!str) return str;
+
+      return str[0].toUpperCase() + str.slice(1);
+    }
+    str = ucFirst(str);
+
+    function changeLetters(str) {
+      str = str.replace(/-/g, ' ');
+      console.log(str);
+      str = str.replace(/оо/g, 'им');
+      alert(str);
+    }
+    changeLetters(str);
+
+    let arr = [20, 33, 1, 'Человек', 2, 3];
+    
+    for (i = arr.length - 1; i >= 0; i--) {
+      if ((typeof (arr[i]) === 'string')) {
+        arr.splice(i, 1);
+      }
+    }
+
+    function extraCube(x) {
+        if (x instanceof Array) return x.map(function (x) {
+          return Math.pow(x, 3);
+        })
+      }
+    arr = extraCube(arr);
+
+    function sumPow(arr) {
+      let sum = arr.reduce((partial_sum, a) => partial_sum + a);
+      console.log(Math.pow(sum, 2));
+    }
+    sumPow(arr);
+  </script>
+</body>
+</html>
