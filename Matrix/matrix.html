@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Matrix</title>
+</head>
+<body>
+  <script>
+    let matrix = [];
+    
+    function matrixItem() {
+        let a = +prompt("How many arrays should matrix include?", "10");
+        let reg = /^\d+$/;
+        if (reg.test(a) && (typeof (a)) != null && a != '' && a <= 10) {
+          for (let i = 0; i < a; i++) {
+            matrix.push(Array.from({ length: Math.floor(Math.random() * 5) + 1 }, () => Math.ceil(Math.random() * 10)));
+          } 
+          let sum = matrix.map(function (x) {
+            return x.reduce(function (a, b) {
+              return a + b;
+            });
+          });
+          console.log(sum);
+        } else matrixItem();
+      }
+    matrixItem();
+
+    console.log(matrix);
+  </script>
+</body>
+</html>

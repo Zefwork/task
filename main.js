@@ -13,7 +13,7 @@ function start() {
   name = prompt("Название вашего магазина?").toUpperCase();
   time = 21;
 }
-start();
+//start();
 
 let mainList = {
   shopBudget: budget,
@@ -21,59 +21,71 @@ let mainList = {
   shopGoods: [],
   employers: {},
   open: true,
-  discount: false
-}
-
-function chooseProducts() {
-  for (i = 0; i < 5; i++) {
-    let a = prompt("Какой тип товаров будем продавать?");
-    if ((typeof (a)) === 'string' && (typeof (a)) != null && a != '' && a.length < 50) {
-      console.log('All is ok!');
-      mainList.shopGoods[i] = a;
-    } else {
-      i = i - 1;
+  discount: false,
+  shopItems: [],
+  chooseProducts: function() {
+    for (i = 0; i < 5; i++) {
+      let a = prompt("Какой тип товаров будем продавать?");
+      if ((typeof (a)) === 'string' && (typeof (a)) != null && a != '' && a.length < 50) {
+        mainList.shopGoods[i] = a;
+      } else {
+        i = i - 1;
+      }
     }
-  }
-}
-chooseProducts();
-
-function workTime(time) {
-  if (time < 0) {
-    console.log("It's impossible");
-  } else if (time > 8 && time < 20) {
-    console.log("Time to work")
-  } else if (time < 24) {
-    console.log("Time to sleep")
-  } else {
-    console.log("Impossible")
-  }
-}
-workTime(18);
-
-function dayBudget() {
-  alert(mainList.shopBudget / 30);
-}
-dayBudget();
-
-function discountSystem(price) {
-  let discount = mainList.discount;
-  if(discount) {
-    price * 0.8;
-  }
-}
-discountSystem(80);
-
-function chooseEmployers() {
-  for (i = 0; i < 4; i++) {
-    let a = prompt("Имя сотрудника");
-    if ((typeof (a)) === 'string' && (typeof (a)) != null && a != '' && a.length < 30) {
-      console.log('All is ok!');
-      mainList.employers[i] = a;
+  },
+  workTime: function(time) {
+    if (time < 0) {
+      console.log("It's impossible");
+    } else if (time > 8 && time < 20) {
+      console.log("Time to work");
+      mainList.open = true;
+    } else if (time < 24) {
+      console.log("Time to sleep")
     } else {
-      i = i - 1;
+      console.log("Impossible")
     }
+  },
+  dayBudget: function() {
+    alert(mainList.shopBudget / 30);
+  },
+  discountSystem: function(price) {
+    if (mainList.discount) {
+      price = price * 0.8;
+    }
+  },
+  chooseEmployers: function() {
+    for (i = 0; i < 4; i++) {
+      let name = prompt("Имя сотрудника");
+        mainList.employers[i] = name;
+    }
+  },
+  chooseShopItems: function() {
+    let items = prompt("Перечислите ваши товары через запятую", "").toLowerCase();
+    mainList.shopItems = items.split(', ');
+    console.log(mainList.shopItems);
+    mainList.shopItems.push(prompt("Добавьте ещё товар", "").toLowerCase());
+    mainList.shopItems.sort();
+    console.log(mainList.shopItems);
+    mainList.shopItems.forEach((item, i) => {
+      alert("У нас вы можете купить. " + (i+1) + ': ' + item + '.');
+    });
   }
 }
-chooseEmployers();
+
+//mainList.chooseProducts();
+
+//mainList.workTime();
+
+//mainList.dayBudget();
+
+//mainList.discountSystem();
+
+//mainList.chooseEmployers();
+
+//mainList.chooseShopItems();
+
+for (key in mainList) {
+  alert("Наш магазин включает в себя: " + key + ".");
+}
 
 console.log(mainList);
