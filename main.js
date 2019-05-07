@@ -84,8 +84,8 @@ let mainList = {
 
 //mainList.chooseShopItems();
 
-for (key in mainList) {
+/* for (key in mainList) {
   alert("Наш магазин включает в себя: " + key + ".");
-}
+} */
 
 console.log(mainList);
