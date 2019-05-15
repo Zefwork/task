@@ -94,6 +94,7 @@ body {
 .main-info .name-value,
 .main-info .budget,
 .main-info .budget-value,
+.main-info .discount-flag,
 .main-info .goods,
 .main-info .goods-value,
 .main-info .items,
@@ -111,7 +112,7 @@ body {
   border: 1px solid rgba(0, 0, 0, 0.8);
 }
 .main-info .isopen-value,
-.main-info .discount-value {
+.main-info .discount-flag {
   background-color: red;
 }
 .main-functions {
@@ -125,6 +126,7 @@ body {
 .main-functions .choose-items,
 .main-functions .time,
 .main-functions .count-budget,
+.main-functions .discount-count,
 .main-functions .hire-employers {
   margin-top: 5px;
   text-align: center;
@@ -145,7 +147,8 @@ body {
 }
 .main-functions .choose-item,
 .main-functions .time-value,
-.main-functions .count-budget-value {
+.main-functions .count-budget-value,
+.main-functions .discount-count-value {
   display: block;
   margin: 0 auto;
   margin-top: 10px;
@@ -156,7 +159,8 @@ body {
 .main-functions .time-value {
   width: 30%;
 }
-.main-functions .count-budget-value {
+.main-functions .count-budget-value,
+.main-functions .discount-count-value {
   width: 30%;
   display: inline-block;
   margin-left: 25%;
