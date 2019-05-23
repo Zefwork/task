@@ -23,6 +23,10 @@ let budget,
     price
 
 open_shop.addEventListener('click', () => {
+  setTimeout(start, 500);
+});
+
+function start() {
   budget = +prompt("Ваш бюджет?", "");
 
   while (isNaN(budget) || budget == '' || budget == null) {
@@ -39,8 +43,7 @@ open_shop.addEventListener('click', () => {
   name_value.textContent = prompt("Название вашего магазина?").toUpperCase();
   mainList.shopBudget = budget;
   mainList.shopPrice = price;
-  console.log(mainList.shopPrice);
-});
+}
 
 goods_btn.addEventListener('click', () => {
   for (i = 0; i < goods_item.length; i++) {
