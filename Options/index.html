@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Options</title>
+</head>
+<body>
+  <script>
+    class Options {
+      constructor (height, width, bg, fontSize, textAlign) {
+        this.height = height;
+        this.width = width;
+        this.background = bg;
+        this.fontSize = fontSize;
+        this.textAlign = textAlign
+      }
+
+      createDiv(text) {
+        let div = document.createElement("div");
+        div.style.height = this.height;
+        div.style.width = this.width;
+        div.style.background = this.background;
+        div.style.fontSize = this.fontSize;
+        div.style.textAlign = this.textAlign;
+        div.innerHTML = text;
+        document.body.insertBefore(div, document.body.firstChild);
+      }
+    }
+
+    let newDiv = new Options("100px", "100px", "red", "16px", "center");
+    newDiv.createDiv('New one');
+  </script>
+</body>
+</html>
