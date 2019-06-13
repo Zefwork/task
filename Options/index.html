@@ -19,11 +19,13 @@
 
       createDiv(text) {
         let div = document.createElement("div");
-        div.style.height = this.height;
-        div.style.width = this.width;
-        div.style.background = this.background;
-        div.style.fontSize = this.fontSize;
-        div.style.textAlign = this.textAlign;
+        div.style.cssText = `
+          height: ${this.height};
+          width: ${this.width};
+          background: ${this.background};
+          font-size: ${this.fontSize};
+          text-align: ${this.textAlign};
+        `;
         div.innerHTML = text;
         document.body.insertBefore(div, document.body.firstChild);
       }
