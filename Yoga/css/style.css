@@ -722,3 +722,59 @@ header ul li:before {
   margin-top: 20px;
   font-size: 20px;
 }
+.total-sum {
+    animation: text-shadow 1.5s ease-in-out infinite;
+    font-weight: 900;
+    line-height: 1;
+    color: #1e5f9c;
+}
+
+@keyframes text-shadow {
+    0% {  
+        transform: translateY(0);
+        text-shadow: 
+            0 0 0 #5169f1, 
+            0 0 0 #9cf5f5, 
+            0 0 0 #f898a3, 
+            0 0 0 #fffeb5;
+    }
+
+    20% {  
+        transform: translateY(-1em);
+        text-shadow: 
+            0 0.125em 0 #5169f1, 
+            0 0.25em 0 #9cf5f5, 
+            0 -0.125em 0 #f898a3, 
+            0 -0.25em 0 #fffeb5;
+    }
+
+    40% {  
+        transform: translateY(0.5em);
+        text-shadow: 
+            0 -0.0625em 0 #5169f1, 
+            0 -0.125em 0 #9cf5f5, 
+            0 0.0625em 0 #f898a3, 
+            0 0.125em 0 #fffeb5;
+    }
+    
+    60% {
+        transform: translateY(-0.25em);
+        text-shadow: 
+            0 0.03125em 0 #5169f1, 
+            0 0.0625em 0 #9cf5f5, 
+            0 -0.03125em 0 #f898a3, 
+            0 -0.0625em 0 #fffeb5;
+    }
+
+    80% {  
+        transform: translateY(0);
+        text-shadow: 
+            0 0 0 #5169f1, 
+            0 0 0 #9cf5f5, 
+            0 0 0 #f898a3, 
+            0 0 0 #fffeb5 ;
+    }
+}
+.total-sum:hover {
+    animation-play-state: paused;
+}
