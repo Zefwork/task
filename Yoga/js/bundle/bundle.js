@@ -1,21 +1,19 @@
 (function(){function r(e,n,t){function o(i,f){if(!n[i]){if(!e[i]){var c="function"==typeof require&&require;if(!f&&c)return c(i,!0);if(u)return u(i,!0);var a=new Error("Cannot find module '"+i+"'");throw a.code="MODULE_NOT_FOUND",a}var p=n[i]={exports:{}};e[i][0].call(p.exports,function(r){var n=e[i][1][r];return o(n||r)},p,p.exports,r,e,n,t)}return n[i].exports}for(var u="function"==typeof require&&require,i=0;i<t.length;i++)o(t[i]);return o}return r})()({1:[function(require,module,exports){
-window.addEventListener('DOMContentLoaded', function () {
-  let ajax = require('../parts/ajax.js');
-  let calc = require('../parts/calc.js');
-  let modal = require('../parts/modal.js');
-  let scroll = require('../parts/scroll.js');
-  let slider = require('../parts/slider.js');
-  let tab = require('../parts/tab.js');
-  let timer = require('../parts/timer.js');
+let ajax = require('../parts/ajax.js');
+let calc = require('../parts/calc.js');
+let modal = require('../parts/modal.js');
+let scroll = require('../parts/scroll.js');
+let slider = require('../parts/slider.js');
+let tab = require('../parts/tab.js');
+let timer = require('../parts/timer.js');
 
-  ajax();
-  calc();
-  modal();
-  scroll();
-  slider();
-  tab();
-  timer();
-});
+ajax();
+calc();
+modal();
+scroll();
+slider();
+tab();
+timer();
 },{"../parts/ajax.js":2,"../parts/calc.js":3,"../parts/modal.js":4,"../parts/scroll.js":5,"../parts/slider.js":6,"../parts/tab.js":7,"../parts/timer.js":8}],2:[function(require,module,exports){
 // AJAX form sending
 function ajax() {
